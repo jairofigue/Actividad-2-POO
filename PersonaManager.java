@@ -22,13 +22,13 @@ public class PersonaManager {
         System.out.print("Apellido: ");
         String apellido = scanner.nextLine();
 
-        System.out.print("Género (M/F): ");
+        System.out.print("Género (MASCULINO/FEMENINO): ");
         String genero = scanner.nextLine().toUpperCase();
 
         System.out.print("Edad (en años): ");
         int edad = Integer.parseInt(scanner.nextLine());
 
-        personas.add(new Persona(nombre, apellido, genero, edad));
+        personas.add(new Persona(nombre, apellido, Genero.valueOf(genero), edad));
 
     }
 
@@ -60,7 +60,7 @@ public class PersonaManager {
     public int contarMasculinos() {
         int count = 0;
         for (Persona persona : personas) {
-            if (persona.getGenero().equalsIgnoreCase("M")) {
+            if (persona.getGenero() == Genero.MASCULINO) {
                 count++;
             }
         }
@@ -71,7 +71,7 @@ public class PersonaManager {
     public int contarFemeninos() {
         int count = 0;
         for (Persona persona : personas) {
-            if (persona.getGenero().equalsIgnoreCase("F")) {
+            if (persona.getGenero() == Genero.FEMENINO) {
                 count++;
             }
         }
