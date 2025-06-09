@@ -1,18 +1,20 @@
 
+import java.time.LocalDate;
+
 public class Persona {
 
     // Propiedades privadas
     private String nombre;
     private String apellido;
     private Genero genero;
-    private int edad;
+    private LocalDate fechaNacimiento;
 
     // Constructor
-    public Persona(String nombre, String apellido, Genero genero, int edad) {
+    public Persona(String nombre, String apellido, Genero genero, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.genero = genero;
-        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     // Getters
@@ -29,6 +31,6 @@ public class Persona {
     }
 
     public int getEdad() {
-        return edad;
+        return LocalDate.now().getYear() - fechaNacimiento.getYear();
     }
 }

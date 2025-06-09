@@ -25,10 +25,11 @@ public class PersonaManager {
         System.out.print("Género (MASCULINO/FEMENINO): ");
         String genero = scanner.nextLine().toUpperCase();
 
-        System.out.print("Edad (en años): ");
-        int edad = Integer.parseInt(scanner.nextLine());
+        System.out.print("Fecha de nacimiento (yyyy-MM-dd): ");
+        String fechaNacimientoStr = scanner.nextLine();
+        java.time.LocalDate fechaNacimiento = java.time.LocalDate.parse(fechaNacimientoStr);
 
-        personas.add(new Persona(nombre, apellido, Genero.valueOf(genero), edad));
+        personas.add(new Persona(nombre, apellido, Genero.valueOf(genero), fechaNacimiento));
 
     }
 
